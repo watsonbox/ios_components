@@ -7,21 +7,34 @@
 
 import UIKit
 
+@objc protocol WBLoginViewControllerDelegate {
+    func authenticate() -> Bool
+}
+
 class WBLoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     
-    class func presentInViewController(viewController: UIViewController) {
+    var delegate: WBLoginViewControllerDelegate?
+    
+    /**
+        Creates a WBLoginViewController, uses the given view controller as its delegate if it conforms to WBLoginViewControllerDelegate, and presents it.
+    
+        :returns: A new WBLoginViewController
+    */
+    class func presentInViewController(viewController: UIViewController) ->  WBLoginViewController {
         let vc = WBLoginViewController(nibName: "WBLoginViewController", bundle: nil)
+        
+        // If passed controller conforms to delegate, use it for authentication
+        vc.delegate = viewController as? WBLoginViewControllerDelegate
+        
         viewController.presentViewController(vc, animated: true, completion: nil)
+        
+        return vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +44,11 @@ class WBLoginViewController: UIViewController {
     
     
     @IBAction func login(sender: AnyObject) {
+        if (delegate?.authenticate() == true) {
+            println("Authenticate successful")
+        } else {
+            println("Authentication failed")
+        }
     }
 
     /*
