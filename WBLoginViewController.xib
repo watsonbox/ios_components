@@ -6,12 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBLoginViewController" customModule="fuber_login" customModuleProvider="target">
             <connections>
-                <outlet property="loginButton" destination="FPl-WY-3Lt" id="kgg-V5-Lo9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="WBLoginView" customModule="fuber_login" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -30,6 +29,9 @@
                 <constraint firstAttribute="centerY" secondItem="FPl-WY-3Lt" secondAttribute="centerY" id="Dwq-o7-J5n"/>
                 <constraint firstAttribute="centerX" secondItem="FPl-WY-3Lt" secondAttribute="centerX" id="X2G-sZ-gdt"/>
             </constraints>
+            <connections>
+                <outlet property="loginButton" destination="FPl-WY-3Lt" id="QaA-MB-eG6"/>
+            </connections>
         </view>
     </objects>
 </document>

@@ -12,13 +12,13 @@ import UIKit
 }
 
 class WBLoginViewController: UIViewController {
-
-    @IBOutlet weak var loginButton: UIButton!
     
     var delegate: WBLoginViewControllerDelegate?
     
     /**
         Creates a WBLoginViewController, uses the given view controller as its delegate if it conforms to WBLoginViewControllerDelegate, and presents it.
+    
+        :param: viewController The view controller within which to present the login view
     
         :returns: A new WBLoginViewController
     */
