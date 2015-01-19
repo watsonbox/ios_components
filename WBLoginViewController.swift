@@ -8,7 +8,7 @@
 import UIKit
 
 @objc protocol WBLoginViewControllerDelegate {
-    func authenticate() -> Bool
+    func authenticate(username: String, password: String) -> Bool
 }
 
 class WBLoginViewController: UIViewController {
@@ -47,7 +47,7 @@ class WBLoginViewController: UIViewController {
     
     
     @IBAction func login(sender: AnyObject) {
-        if (delegate?.authenticate() == true) {
+        if (delegate?.authenticate(usernameTextField.text, password: passwordTextField.text) == true) {
             println("Authenticate successful")
         } else {
             println("Authentication failed")
