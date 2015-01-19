@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBLoginViewController" customModule="fuber_login" customModuleProvider="target">
             <connections>
+                <outlet property="passwordTextField" destination="cwx-gO-MWH" id="LGe-fa-Wbe"/>
+                <outlet property="usernameTextField" destination="zZD-GO-Kzp" id="YMa-R0-olT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,12 +25,76 @@
                         <action selector="login:" destination="-1" eventType="touchUpInside" id="wzV-hv-X9z"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZD-GO-Kzp">
+                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="vou-6b-ASU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="vou-6b-ASU"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="vou-6b-ASU"/>
+                        </mask>
+                    </variation>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwx-gO-MWH">
+                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Th0-zq-Pyr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Th0-zq-Pyr"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="Th0-zq-Pyr"/>
+                        </mask>
+                    </variation>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="zZD-GO-Kzp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="0Js-aT-Nqy"/>
                 <constraint firstAttribute="centerY" secondItem="FPl-WY-3Lt" secondAttribute="centerY" id="Dwq-o7-J5n"/>
+                <constraint firstItem="cwx-gO-MWH" firstAttribute="top" secondItem="zZD-GO-Kzp" secondAttribute="bottom" constant="8" id="RXv-HV-rlQ"/>
                 <constraint firstAttribute="centerX" secondItem="FPl-WY-3Lt" secondAttribute="centerX" id="X2G-sZ-gdt"/>
+                <constraint firstAttribute="centerX" secondItem="zZD-GO-Kzp" secondAttribute="centerX" id="llJ-x1-A2C"/>
+                <constraint firstAttribute="centerX" secondItem="cwx-gO-MWH" secondAttribute="centerX" id="voH-Ls-cJQ"/>
             </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="zZD-GO-Kzp"/>
+                    <exclude reference="cwx-gO-MWH"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="0Js-aT-Nqy"/>
+                    <exclude reference="llJ-x1-A2C"/>
+                    <exclude reference="RXv-HV-rlQ"/>
+                    <exclude reference="voH-Ls-cJQ"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="zZD-GO-Kzp"/>
+                    <include reference="cwx-gO-MWH"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="0Js-aT-Nqy"/>
+                    <include reference="llJ-x1-A2C"/>
+                    <include reference="RXv-HV-rlQ"/>
+                    <include reference="voH-Ls-cJQ"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="loginButton" destination="FPl-WY-3Lt" id="QaA-MB-eG6"/>
             </connections>

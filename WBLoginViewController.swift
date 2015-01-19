@@ -13,6 +13,9 @@ import UIKit
 
 class WBLoginViewController: UIViewController {
     
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     var delegate: WBLoginViewControllerDelegate?
     
     /**
